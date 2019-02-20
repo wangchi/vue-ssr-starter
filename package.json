@@ -4,7 +4,8 @@
   "description": "Vue Server Side Renderer Starter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint testeslint.vue"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/wangchi/vue-ssr-starter/issues"
   },
-  "homepage": "https://github.com/wangchi/vue-ssr-starter#readme"
+  "homepage": "https://github.com/wangchi/vue-ssr-starter#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-plugin-vue": "^5.2.2"
+  }
 }
