@@ -1,0 +1,19 @@
+{
+  "name": "vue-ssr-starter",
+  "version": "0.0.1",
+  "description": "Vue Server Side Renderer Starter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangchi/vue-ssr-starter.git"
+  },
+  "author": "Wang Chi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangchi/vue-ssr-starter/issues"
+  },
+  "homepage": "https://github.com/wangchi/vue-ssr-starter#readme"
+}
