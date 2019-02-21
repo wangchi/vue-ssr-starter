@@ -6,7 +6,7 @@ const clientConfig = {
   mode: 'development',
   entry: './src/client/index.js',
   output: {
-    path: path.resolve(__dirname, './public'),
+    path: path.resolve(__dirname, './public/static'),
     filename: 'index.js'
   },
 };

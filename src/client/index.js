@@ -1,7 +1,5 @@
-import Vue from 'vue';
-import Home from '../pages/Home';
+import { createApp } from '../main';
 
-new Vue({
-  el: '#app',
-  render: h => h(Home)
-});
+const { app } = createApp();
+
+app.$mount('#app');

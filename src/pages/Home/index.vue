@@ -1,7 +1,14 @@
 <template>
   <div>
     hello {{ message }}
-    <button @click="handleClick">click</button>
+    <button @click="handleClick">
+      click
+    </button>
+    <hr>
+    <router-link :to="{ name: 'children' }">
+      Home Children
+    </router-link>
+    <router-view />
   </div>
 </template>
 <script>
