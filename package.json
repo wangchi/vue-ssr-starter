@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/wangchi/vue-ssr-starter#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "koa": "^2.7.0",
     "koa-convert": "^1.2.0",
     "koa-router": "^7.4.0",

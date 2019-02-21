@@ -4,6 +4,14 @@
     <button @click="handleClick">
       click
     </button>
+    <ul>
+      <li
+        v-for="item in newsList"
+        :key="item.id"
+      >
+        {{ item.id }} - {{ item.title }}
+      </li>
+    </ul>
     <hr>
     <router-link :to="{ name: 'children' }">
       Home Children
@@ -13,10 +21,21 @@
 </template>
 <script>
 export default {
+  computed: {
+    newsList() {
+      return this.$store.getters.newsList;
+    }
+  },
+
   data() {
     return {
       message: 'walker'
     };
+  },
+
+  mounted() {
+    this.$store.dispatch('fetchNewsList');
+    // console.log(this.$store);
   },
 
   methods: {
