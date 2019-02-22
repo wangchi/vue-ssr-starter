@@ -16,7 +16,7 @@ export const createStore = () => {
     },
     actions: {
       fetchNewsList({ commit }) {
-        axios.get('/api/newslist').then((res) => {
+        return axios.get('http://127.0.0.1:3000/api/newslist').then((res) => {
           if (res.data.code === 0) {
             commit('setNewsList', res.data.data);
           } else {

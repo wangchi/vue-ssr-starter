@@ -46,6 +46,10 @@ export default {
     handleClick() {
       alert('clicked');
     }
+  },
+
+  asyncData({ store }) {
+    return store.dispatch('fetchNewsList');
   }
 };
 </script>

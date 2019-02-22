@@ -15,7 +15,6 @@ const renderer = createRenderer({
     <body>
       hello vue ssr
       <!--vue-ssr-outlet-->
-      <script src="./static/index.js"></script>
     </body>
     </html>
   `
@@ -30,7 +29,7 @@ const context = {
 
 
 const render = (ctx) => {
-  appInstance({ url: ctx.url }).then((app) => {
+  return appInstance({ url: ctx.url }).then((app) => {
     renderer.renderToString(app, context, (err, html) => {
       if (err) {
         if (err.code === 404) {
@@ -41,6 +40,7 @@ const render = (ctx) => {
           ctx.body = 'Internal Server Error';
         }
       } else {
+        // console.log(html);
         ctx.body = html;
       }
     });

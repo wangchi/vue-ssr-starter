@@ -17,8 +17,8 @@ router.get('/api/newslist', (ctx) => {
   };
 });
 
-router.get('*', (ctx) => {
-  render(ctx);
+router.get('*', async (ctx) => {
+  await render(ctx);
 });
 
 app.use(router.routes());

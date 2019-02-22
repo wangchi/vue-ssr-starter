@@ -2,7 +2,7 @@ import { createApp } from '../main.js';
 
 export default context => {
   return new Promise((resolve, reject) => {
-    const { app, router } = createApp();
+    const { app, router, store } = createApp();
 
     router.push(context.url);
 
@@ -13,7 +13,27 @@ export default context => {
         return reject({ code: 404 });
       }
 
-      resolve(app);
+      // console.log(matchedComponents);
+
+      const promises = [];
+
+      matchedComponents.forEach(item => {
+        if (item.asyncData) {
+          promises.push(item.asyncData({ store, route: router.currentRoute }));
+        }
+      });
+
+      // resolve(app);
+
+      Promise.all(promises).then(() => {
+        // console.log(store.state);
+        context.state = store.state;
+        resolve(app);
+      }).catch(err => {
+        console.log(err);
+        reject(err);
+      });
+
     }, reject);
 
   });
