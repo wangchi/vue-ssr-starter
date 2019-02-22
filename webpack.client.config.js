@@ -1,6 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
-const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
+// const webpack = require('webpack');
+// const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
 const merge = require('webpack-merge');
 const config = require('./webpack.base.config');
 
@@ -12,10 +12,11 @@ const clientConfig = {
     filename: 'index.js'
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.VUE_ENV': '"client"'
-    }),
-    new VueSSRClientPlugin()
+    // new webpack.DefinePlugin({
+    //   'process.env.NODE_ENV': '"development"',
+    //   'process.env.VUE_ENV': '"client"'
+    // }),
+    // new VueSSRClientPlugin()
   ]
 };
 

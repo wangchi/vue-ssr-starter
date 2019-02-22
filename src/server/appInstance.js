@@ -26,9 +26,9 @@ export default context => {
       // resolve(app);
 
       Promise.all(promises).then(() => {
-        // console.log(store.state);
-        context.state = store.state;
-        resolve(app);
+        console.log(store.state);
+        // context.state = store.state;
+        resolve({ app, state: store.state });
       }).catch(err => {
         console.log(err);
         reject(err);

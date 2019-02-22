@@ -3,9 +3,9 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
   resolve: {
     extensions: ['.js', '.vue'],
-    alias: {
-      vue$: 'vue/dist/vue.esm.js'
-    }
+    // alias: {
+    //   vue$: 'vue/dist/vue.esm.js'
+    // }
   },
   module: {
     rules: [

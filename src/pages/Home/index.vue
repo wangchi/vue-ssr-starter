@@ -34,6 +34,9 @@ export default {
   },
 
   mounted() {
+    // console.log(this.newsList);
+    // if (!this.newsList.length) {
+    // }
     this.$store.dispatch('fetchNewsList');
     // console.log(this.$store);
   },

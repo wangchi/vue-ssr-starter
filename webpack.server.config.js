@@ -1,7 +1,7 @@
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
-const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
+// const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
 const merge = require('webpack-merge');
 const config = require('./webpack.base.config');
 
@@ -10,22 +10,17 @@ const serverConfig = {
   output: {
     path: path.resolve(__dirname, './build'),
     filename: 'index.js',
-    libraryTarget: 'commonjs2'
+    // libraryTarget: 'commonjs2'
   },
   mode: 'development',
   target: 'node',
   externals: [nodeExternals()],
-  resolve: {
-    extensions: ['.js', '.vue'],
-    alias: {
-      vue$: 'vue/dist/vue.esm.js'
-    }
-  },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.VUE_ENV': '"server"' // ssr官方规定
-    }),
-    new VueSSRServerPlugin()
+    // new webpack.DefinePlugin({
+    //   'process.env.NODE_ENV': '"development"',
+    //   'process.env.VUE_ENV': '"server"'
+    // }),
+    // new VueSSRServerPlugin()
   ]
 };
 

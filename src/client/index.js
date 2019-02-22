@@ -34,7 +34,7 @@ router.onReady(() => {
 
     const asyncDataHooks = activated.map(c => c.asyncData).filter(_ => _);
 
-    console.log(asyncDataHooks);
+    // console.log(asyncDataHooks);
 
     if (!asyncDataHooks.length) {
       return next();
