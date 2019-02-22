@@ -18,16 +18,13 @@ export default context => {
       const promises = [];
 
       matchedComponents.forEach(item => {
-        if (item.asyncData) {
-          promises.push(item.asyncData({ store, route: router.currentRoute }));
+        if (item.loadData) {
+          promises.push(item.loadData({ store, route: router.currentRoute }));
         }
       });
 
-      // resolve(app);
-
       Promise.all(promises).then(() => {
-        console.log(store.state);
-        // context.state = store.state;
+        // console.log(store.state);
         resolve({ app, state: store.state });
       }).catch(err => {
         console.log(err);

@@ -1,19 +1,10 @@
 import { createRenderer } from 'vue-server-renderer';
 import appInstance from './appInstance';
 
-
-const context = {
-  title: 'Vue SSR Starter',
-  meta: `
-    <meta name="description" content="Vue Server Side Renderer Starter"/>
-  `
-};
-
-
 const render = (ctx) => {
   return appInstance({ url: ctx.url }).then(({ app, state }) => {
     // console.log(app);
-    console.log(state);
+    // console.log(state);
 
     const renderer = createRenderer({
       template: `
@@ -38,6 +29,13 @@ const render = (ctx) => {
       `
     });
 
+    const context = {
+      title: 'Vue SSR Starter',
+      meta: `
+        <meta name="description" content="Vue Server Side Renderer Starter"/>
+      `
+    };
+
     renderer.renderToString(app, context, (err, html) => {
       if (err) {
         if (err.code === 404) {
@@ -48,7 +46,7 @@ const render = (ctx) => {
           ctx.body = 'Internal Server Error';
         }
       } else {
-        console.log(html);
+        // console.log(html);
         ctx.body = html;
       }
     });

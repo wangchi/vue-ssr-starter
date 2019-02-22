@@ -34,11 +34,11 @@ export default {
   },
 
   mounted() {
-    // console.log(this.newsList);
-    // if (!this.newsList.length) {
-    // }
-    this.$store.dispatch('fetchNewsList');
-    // console.log(this.$store);
+    console.log('home mounted');
+    if (!this.newsList.length) {
+      this.$store.dispatch('fetchNewsList');
+      console.log('client render');
+    }
   },
 
   methods: {
@@ -51,7 +51,7 @@ export default {
     }
   },
 
-  asyncData({ store }) {
+  loadData({ store }) {
     return store.dispatch('fetchNewsList');
   }
 };
